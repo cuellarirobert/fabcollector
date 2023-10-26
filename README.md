@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 # fabdeckcollector
 FaB Collection Management tool using Fabdb and Fabrary as potential data sources.
 =======
 # Flesh and Blood Card Collection Management System
 #### Video Demo: [YouTube Link](https://www.youtube.com/watch?v=yOGV3C9GR4s)
 #### Description:
-Flesh and blood is a card game similar to Magic, Pokemon, etc. Because it's a relatively small community for the game, there's only a handful of sites where people put decks together, manage collections, etc. The two main websites that are used are Fabdb.net and Fabrary.com
+Flesh and Blood is a card game similar to Magic, Pokemon, etc. Because it's a relatively small community for the game, there's only a handful of sites where people put decks together, manage collections, etc. The two main websites that are used are Fabdb.net and Fabrary.com
 
 I won't use these sites to manage my collection because it's very tedious finding each card that I own, how many copies, what versions etc.
 
@@ -58,4 +57,3 @@ pip install -r requirements.txt
 
 ## Future Improvements
 I think I would focus on making some of the filters more usable, like adding icons and things that represent foiling better than just pure text, like maybe styling with CSS and adding javascript. Getting better aligned with the data to handle edge cases for some cards that aren't retrievable now is something worth investigating more, and working on exporting to other formats to be more of a Swiss army knife of deck collection maintenance would be really cool.
->>>>>>> e281f3c (initial commit)
