@@ -1,0 +1,42 @@
+<!-- collection_table.html -->
+<form id="updateForm" hx-post="/decklist/update-owned" hx-trigger="submit">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Card Name</th>
+        <th>Set ID</th>
+        <th>Edition</th>
+        <th>Foiling</th>
+        <th>Art Variation</th>
+        <th>Rarity</th>
+        <th>Owned Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for card in cards %}
+        <tr>
+          <td>{{ card.card_name }}</td>
+          <td>{{ card.set_id }}</td>
+          <td>{{ card.edition }}</td>
+          <td>{{ card.foiling }}</td>
+          <td>{{ card.art_variation }}</td>
+          <td>{{ card.rarity }}</td>
+            <td>
+                <input type="number" class="owned-input"
+                       data-printing="{{ card.set_id }}" 
+                       data-edition="{{ card.edition }}" 
+                       data-foiling="{{ card.foiling }}"
+                       data-art-variation="{{ card.art_variation }}"
+                       name="owned_cards__{{ card.set_id }}_{{ card.edition }}_{{ card.foiling }}_{{ card.art_variation }}" 
+                       value="{{ card.amount }}">
+            </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <button type="submit" id="updateButton" class="btn btn-primary">Update Owned Status</button>
+</form>
+
+
+
+

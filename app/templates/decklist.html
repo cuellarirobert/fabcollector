@@ -1,0 +1,67 @@
+<!-- decklist1.html -->
+{% block head %}
+<style>
+#collectionFilterForm {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px; 
+}
+
+#collectionFilterForm label,
+#collectionFilterForm select {
+    margin-bottom: 0;
+}
+
+</style>
+{% endblock %}
+
+{% block title %}
+{% endblock %}
+
+{% block main %}
+  <h2>Update collection button at bottom</h2>
+
+  <form id="collectionFilterForm">
+    <label for="editionFilter">Edition</label>
+    <select hx-get="/decklist_table" hx-trigger="change" hx-target="#deckTableDiv" id="editionFilter" class="form-select" name="edition">
+            <option value="all">All</option>
+            <option value="U">Unlimited</option>
+            <option value="F">First Edition</option>
+            <option value="A">Alpha</option>
+            <option value="N">Other</option>
+    </select>
+    <label for="rarityFilter">Rarity</label>
+    <select hx-get="/decklist_table" hx-trigger="change" hx-target="#deckTableDiv" id="rarityFilter" class="form-select" name="rarity">
+            <option value="all">All</option>
+            <option value="R">Rare</option>
+            <option value="C">Common</option>
+            <option value="S">Super Rare</option>
+            <option value="M">Majestic</option>
+            <option value="L">Legendary</option>
+            <option value="V">Marvel</option>
+            <option value="T">Token</option>
+            <option value="P">Promo</option>
+        </select>
+
+    <label for="foilingFilter">Foiling</label>
+    <select hx-get="/decklist_table" hx-trigger="change" hx-target="#deckTableDiv" id="foilingFilter" class="form-select" name="foiling">
+            <option value="all">All</option>
+            <option value="S">Non Foil</option>
+            <option value="C">Cold Foil</option>
+            <option value="R">Rainbow Foil</option>
+    </select>
+    <label for="artVariationFilter">Art Variation</label>
+        <select hx-get="/decklist_table" hx-trigger="change" hx-target="#deckTableDiv" id="artVariationFilter" class="form-select" name="artVariation">
+            <option value="all">All</option>
+            <option value="AB">Alternate Border</option>
+            <option value="AA">Alternate Art</option>
+            <option value="AT">Alternate Text</option>
+            <option value="EA">Extended Art</option>
+            <option value="FA">Full Art</option>
+        </select>
+  </form>
+
+  <div id="deckTableDiv" hx-get="/decklist_table" hx-trigger="load">
+  </div>
+{% endblock %}
